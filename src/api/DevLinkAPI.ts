@@ -15,7 +15,11 @@ export async function getUser() {
     } catch (error) {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.error);
-        }
+          } else if (error instanceof Error) {
+            throw new Error(error.message);
+          } else {
+            throw new Error('Error desconocido');
+          }
     }
 }
 
@@ -29,7 +33,11 @@ export async function updateUser(formData: ProfileForm) {
     } catch (error) {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.error);
-        }
+          } else if (error instanceof Error) {
+            throw new Error(error.message);
+          } else {
+            throw new Error('Error desconocido');
+          }
     }
 }
 
@@ -42,7 +50,11 @@ export async function uploadImage(file: File) {
     } catch (error) {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.error);
-        }
+          } else if (error instanceof Error) {
+            throw new Error(error.message);
+          } else {
+            throw new Error('Error desconocido');
+          }
     }
 }
 
@@ -54,7 +66,11 @@ export async function getUserByHandle(handle: string) {
     } catch (error) {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.error);
-        }
+          } else if (error instanceof Error) {
+            throw new Error(error.message);
+          } else {
+            throw new Error('Error desconocido');
+          }
     }
 }
 
@@ -65,6 +81,10 @@ export async function searchByHandle(handle: string) {
     } catch (error) {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.error);
-        }
+          } else if (error instanceof Error) {
+            throw new Error(error.message);
+          } else {
+            throw new Error('Error desconocido');
+          }
     }
 }
