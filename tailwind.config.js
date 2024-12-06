@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import forms from '@tailwindcss/forms';
+
 export default {
   content: [
     "./index.html",
@@ -6,16 +8,15 @@ export default {
   ],
   theme: {
     extend: {
-       backgroundImage:{
-        "home" : "url('/bg.svg')",
-       },
-       backgroundSize: {
-        "home-xl": "50%"
-       },     
+      backgroundImage: {
+        "home": "url('/bg.svg')",
+      },
+      backgroundSize: {
+        "home-xl": "50%",
+      },     
     },
   },
   plugins: [
-        require('@tailwindcss/forms')
+    forms,
   ],
-}
-
+};
